@@ -1,0 +1,56 @@
+const payment = true;
+const marks = 80;
+
+
+function enroll(){
+        console.log('you have to pay')
+const promise = new Promise(function(resolve, reject){
+        setTimeout(function(){
+                if(payment){
+                        resolve();
+               }
+        }, 3000);
+})
+return promise;
+}
+
+function progress(){
+        console.log('you are in course')
+
+const promise = new Promise(function(resolve, reject){
+        setTimeout(function(){
+         if(marks >= 75){
+                resolve()
+         }
+        }, 2000)
+})
+return promise;
+}
+
+function certificate(){
+        console.log('please wait...')
+const promise = new Promise(function(resolve){
+        setTimeout(function(){
+                resolve('Congratulations...❤')
+        }, 2000)
+})
+
+return promise;
+}
+
+async function result(){
+        try{
+
+                await enroll();
+                await progress();
+                const para = await certificate()
+                console.log(para)
+        }catch(err){
+                console.log(err)
+        }
+
+}
+
+result()
+
+console.log([] + [])

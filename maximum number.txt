@@ -1,0 +1,12 @@
+const x = function(){
+    let mv = 0;
+    for(let i = 0; i < arguments.length; i++){
+            if(arguments[i] > mv){
+              mv = arguments[i]
+            }
+    }
+    return mv;
+    
+}
+const res = x(11, 4, 22, 33, 14, 8);
+console.log(res)

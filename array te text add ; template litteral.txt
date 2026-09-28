@@ -1,0 +1,17 @@
+function modi(str, ...val){
+    const m = str.reduce((pre, curr) =>{
+            return pre + curr + (val.length ?'mr.' + val.shift(): "")
+    }, "")
+
+    return m;
+}
+
+
+let pl1 = 'sakib';
+let p2 = 'tamim';
+
+let x = modi `we have ${pl1} and we have ${p2} in our cricket team`;
+
+
+
+console.log(x)

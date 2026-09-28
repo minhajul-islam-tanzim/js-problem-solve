@@ -1,0 +1,14 @@
+const lan = ['javaScr', 'python', 'PHP', 'c++']
+
+function maps(arr, fn){
+let result = []
+    for(let i = 0; i < arr.length; i++){
+        return result.push(fn(arr[i]))
+    }
+
+
+}
+
+const x = maps(lan, function(lan){
+    return lan.length;
+})

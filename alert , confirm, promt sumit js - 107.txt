@@ -1,0 +1,29 @@
+const x = document.getElementById('d1')
+const y = document.getElementById('d2')
+
+
+function aler(){
+    alert('hello world')
+
+}
+function con(){
+    let txt;
+    if(confirm('tannu')){
+        txt = 'thanks';
+    }else{
+        txt = 'im angry'
+    }
+        x.innerHTML = txt;
+}
+function prom(){
+    let txt;
+    let person = prompt('Enter your name:')
+    if(person === null || person === ""){
+        txt = 'please Leave from here'
+    }else{
+        txt = person + " " + 'how are you ?' 
+    }
+
+y.innerHTML = txt;
+
+}

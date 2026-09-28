@@ -1,0 +1,38 @@
+1st problem------------->>>>
+
+// tanzim নামটা এই বাক্যতে কয়বার ব্যাবহার হয়েছে ? প্রথমবার কত নাম্বার পজিশনে আছে ?
+
+
+
+// tanzim নামটা এই বাক্যতে কয়বার ব্যাবহার হয়েছে ?
+const sen = "hello world Tanzim all about teaching tanZim locat lorem";
+    const res = sen.match(/tanzim/ig);
+    const r = res ? res.length : "not";
+    console.log(r)
+    
+    //  প্রথমবার কত নাম্বার পজিশনে আছে ?
+    let us = sen.search(/tanzim/ig);
+        us =  us >= 0 ? us : "not found";
+    console.log(us)
+
+
+
+2nd problem----------->>>>>
+
+
+
+
+// liniear search output = 2 or "not found"
+// const arr = (['a', 'b', 'c'], 'b');
+
+function myf(arr, val){
+    let x = arr.length;
+    for(let i = 0; i < x; i++){
+        if(arr[i] === val){
+            return i;
+        }       
+    }
+    return 'not';
+}
+// const res = myf(arr)
+console.log( myf(['a', 'b', 'c'], 'c'))

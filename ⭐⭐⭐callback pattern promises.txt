@@ -1,0 +1,56 @@
+const payment = false;
+const marks = 70;
+
+function enroll(){
+    console.log('course enrollment is in progress...')
+const promise = new Promise(function(resolve, reject){
+
+    setTimeout(function(){
+        if(payment){
+            resolve()
+        } else{
+            reject('payment failed')
+        }
+    }, 3000);
+
+});
+return promise;
+
+}
+
+function prog(){
+    const promise = new Promise(function(resolve, reject){
+            setTimeout(function(){
+                if(marks >= 70){
+                    resolve();
+                }else{
+                    reject('you have not actuall marks')
+                }
+            }, 2000);
+    })
+    return promise;
+}
+
+function certi(){
+    const promise = new Promise(function(resolve){
+        console.log('please wait');
+
+        setTimeout(function(){
+            resolve(console.log('congratulation'))
+        }, 1000)
+
+    })
+    return promise;
+}
+
+enroll()
+    .then(prog)
+    .then(certi)
+    .then(function(val){
+        console.log(val)
+    }) 
+
+    .catch(function(err){
+        console.log(err)
+                                            
+    }) 

@@ -1,0 +1,62 @@
+const x = [
+    {
+    name:"tanzim",
+    age:20
+    },
+    {
+    name:"azim",
+    age:22
+    },
+    {
+    name:"saad",
+    age:23
+    }
+
+];
+
+function names(nam){
+ return nam.filter(function(name){
+    return name.age > 21;
+    }).map(function(y){
+        return y.name
+    }) 
+  
+}
+
+let y = names(x)
+console.log(y)
+
+
+
+
+>>>>>>>>>>>>>>>>>another way...... with arrow function  
+
+
+const cars = [
+    {
+        name: "BMW",
+        model: "W1",
+        used: "3y",
+        price:"100"
+    },
+    {
+        name: "BMW",
+        model: "W2",
+        used: "3y",
+        price:"101"
+    },
+    {
+        name: "BMW",
+        model: "W3",
+        used: "3y",
+        price:"99"
+    }
+];
+
+let buy = (cars) => {
+  return cars.filter((cars) => cars.price >= 100).map((x) => x.name)
+    
+}
+
+let x = buy(cars)
+console.log(x)

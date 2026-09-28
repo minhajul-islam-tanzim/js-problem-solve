@@ -1,0 +1,28 @@
+function wal(){
+
+    let balance = 10;
+
+  return {
+    dep:amount =>{
+        balance += amount
+        console.log(' deposite balance :', balance, '---deposite time:', new Date().toLocaleTimeString())
+
+    } ,
+    withdraw:amount =>{
+        balance -= amount
+        console.log('withdraw balance:', balance)
+
+    }
+
+
+  }
+return balance
+
+}
+
+
+const w = wal()
+console.log(w)
+w.dep(199)
+w.withdraw(100)
+w.withdraw(100)

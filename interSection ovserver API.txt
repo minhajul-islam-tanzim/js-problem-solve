@@ -1,0 +1,81 @@
+মানে scroll করে চোখের সামনে আসলে কিছু একটা হবে 
+
+Html>>>>>>>>>>>>>>
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <link rel="stylesheet" href="./css/Style.css">
+</head>
+<body>
+  
+<div></div>
+<div></div>
+<div></div>
+<div></div>
+<div></div>
+<div></div>
+<div></div>
+<div></div>
+<div></div>
+<div></div>
+<div></div>
+<div></div>
+<div></div>
+<div></div>
+
+
+    <script src="./js/main.js"></script>
+</body>
+</html>
+
+
+
+css>>>>>>>>>>>>>>>>>>>>>>>>>>
+
+
+div{
+    height: 200px;
+    width: 200px;
+    border-radius: 10%;
+    background-color: blueviolet;
+    border:  3px solid pink;
+    transition: all 0.5s ease-in-out;
+    transform: scale(1.1);
+    opacity: 0;
+    padding: 10px;
+    margin: 0 auto 20px auto;
+    display: flex;
+    gap: 20px;
+}
+
+
+.vis{
+    transform:  scale(1);
+    opacity: 1;
+}
+
+
+
+js>>>>>>>>>>>>>>>>>>>>>>>>>>
+
+const sq = document.querySelectorAll('div');
+
+const obs = new IntersectionObserver((sq) => {
+
+    sq.forEach(squ => {
+        if(squ.isIntersecting){
+            squ.target.classList.add('vis')
+
+        }else{
+            squ.target.classList.remove('vis')
+        }
+
+    })
+
+})
+
+  sq.forEach(squ => obs.observe(squ))

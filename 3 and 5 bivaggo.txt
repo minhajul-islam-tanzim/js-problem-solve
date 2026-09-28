@@ -1,0 +1,20 @@
+// 3 * 5 = 15
+// num % 15 === 0 --- 3 o 5 dara bivaggo
+// num % 5 ==== 0 ---- 5 dara bivajjo 
+// num % 3 ==== 0 ---- 3 dara bivajjo 
+
+
+function my(num){
+for(let i = 1; i <= num; i++){
+    if(i % 15 === 0){
+        console.log(`${i} 3 and 5 dara bivajjo`)
+    } else if(i % 5 === 0){
+            console.log(`${i} 5 drara bivajjo`)
+    } else if(i % 3 === 0) {
+        console.log(`${i} 3 dara bivajjo`)
+    } else{
+        console.log(i)
+    }
+}
+}
+my(100)

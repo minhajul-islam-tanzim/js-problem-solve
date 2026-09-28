@@ -1,0 +1,38 @@
+  const payment = true;
+const marks = 70;
+
+function en(callback){
+    console.log('you have to pay')                                                       
+
+    setTimeout(function(){
+        if(payment){
+            callback();
+        }else{
+            console.log('you did not pay')
+        }
+    }, 2000)
+
+}
+
+function pro(callback){
+    console.log('your cource is proggress')
+    setTimeout(function(){
+        if(marks >= 70){
+            callback()
+                                                                                                                                                                                                                                                                     }else{
+	console.log('you have not actuall marks')
+    }, 3000)
+}
+
+function cer(){
+    console.log('you will got')
+    setTimeout(function(){
+        console.log('congratulations')
+    }, 1000)
+}
+
+en(function(){
+    pro(function(){
+        cer()
+    })
+})

@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+
+
+
+    <h2>make a table based on the value drop down menu</h2>
+
+    <select name="" id="mysel" onchange="chngmy(this.value)">
+
+      <option value="">choose an option</option>
+      <option value="customers">customers</option>
+      <option value="products">products</option>
+      <option value="suppliers">suppplires</option>
+
+    </select>
+
+  <p id="demo"></p>
+
+
+
+
+
+
+
+
+<script>
+
+  const demo = document.getElementById("demo");
+
+    async function chngmy(sel){
+      const dbp = JSON.stringify({table: sel, limit:20})
+      // ami eikhane txt nite ar pathate parbo kno obj parbona taii direct txt pathalam
+
+
+
+
+      const fapi = await fetch("json_demo_html_table.php", {
+          method: "POST",
+          headers:{"Content-type": "application/x-www-form-urlencoded"
+        },
+      body:dbp
+      })
+
+      const myObj = await fapi.json();
+
+     let text = "<table border='1'>"
+    for (x in myObj) {
+      text += "<tr><td>" + myObj[x].name + "</td></tr>";
+    }
+    text += "</table>"    
+    
+    demo.innerHTML = text;
+
+    }
+
+</script>
+
+
+</body>
+</html>

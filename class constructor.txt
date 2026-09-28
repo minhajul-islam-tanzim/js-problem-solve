@@ -1,0 +1,16 @@
+class Car {
+    constructor(name, year){
+        this.car = name;
+        this.age = year;
+
+    }
+    play(){
+        let date = new Date()
+        console.log(date.getFullYear() - this.age)
+    }
+};
+
+
+const x = new Car ("toyota", 2014)
+x.play()
+// console.log()

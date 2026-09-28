@@ -1,0 +1,22 @@
+debounce দিয়ে আমরা delay মানে ক্লিক যদি ৩ সেকেন্ড থাকে তার মোধ্যে যদি ২বার ক্লিক লেগে যাই তা যেন count না হয়  সেই জন্য এই নিয়ম
+
+
+const button = document.getElementById('button');
+
+function deb(fn, delay){
+    let x;
+
+    return function(){
+        if(x){
+            clearTimeout(x);
+        }
+     x =  setTimeout(fn, delay);
+    };
+
+}
+
+
+button.addEventListener('click', deb(function(){
+    console.log('clicked')
+}, 1000))
+

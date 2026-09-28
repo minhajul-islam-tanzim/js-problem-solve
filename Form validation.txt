@@ -1,0 +1,30 @@
+HTML >>>>>>>>>>>>>
+
+
+    <form name="myform" action="" onsubmit="return valid()" id="f1">
+        name: <input type="text" name="fname" id="">
+        <input type="submit" value="Submit">
+
+    </form>
+
+
+Js>>>>>>>>>>>>>>>
+
+function valid(){
+    const form = document.forms['myform']
+    const x = form['fname'].value;
+
+    if(x === ''){
+        alert('you have write something')
+        return false;
+    }else if(isNaN(x)){
+        alert('you have write your age')
+        return false;
+    }else if(x < 18){
+        alert('you have mminium 18 yr')
+        return false;
+    } else{
+        return true;
+    } 
+}
+

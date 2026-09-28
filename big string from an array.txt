@@ -1,0 +1,42 @@
+// একটা array থেকে সব থেকে বড় string and  string টার index কত ...?
+
+{
+
+const arr = ['tanzim', 'hasan', 'yusuf', 'hneasu', 'bsudfasi'];
+
+ function my(arr){
+        let name = "";
+    for(names of arr){
+        if(name.length < names.length){
+          name = names;   
+        }
+    }
+    return [names, arr.indexOf(names)]
+ }
+ const res = my(arr)
+ console.log(res)
+
+
+
+
+
+
+
+
+function my(arr){
+    let len = arr.length;
+    let name = "";
+    for(let i = 0; i < len; i++ ){
+    let names = arr[i];
+    if(names.length > name.length){
+           name = names;
+        
+            }
+    }
+    console.log(name)
+    // return [name, arr.indexOf(name)]       
+    }
+const r = my(arr)
+console.log(r)
+
+}

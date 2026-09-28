@@ -1,0 +1,34 @@
+const num = [1, 2, 1, 3, 2, 1, 4, 5, 5]
+const dup = num.filter(function(val, index, array){
+     return array.indexOf(val) !== index;
+    });
+    console.log(dup)
+
+
+unique number ------------>
+
+
+const num = [1, 2, 1, 3, 2, 1, 4, 5, 5]
+const dup = num.filter(function(val, index, array){
+     return array.indexOf(val) == index;
+    });
+    console.log(dup)
+
+
+another ---------------------------->>>>>>>>>
+
+
+
+
+const dup = [1, 2, 3, 1, 3, 4];
+function my(dup){
+ return dup.filter(function(val, ind, arr){
+      if(arr.indexOf(val) !== ind){
+         return dup;
+      }
+
+ })
+}
+
+const res = my(dup)
+console.log(res)

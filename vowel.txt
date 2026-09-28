@@ -1,0 +1,16 @@
+const vowel = ["a", "e", "i", "o", "u"];
+
+function co(sen) {
+    let count = 0;
+    const lett = Array.from(sen);
+
+    lett.forEach(function (lett) {
+        if(vowel.includes(lett)){
+            count++
+        }
+    });
+    // return count;
+    console.log(count)
+}
+
+const res = co("i love bangladesh");

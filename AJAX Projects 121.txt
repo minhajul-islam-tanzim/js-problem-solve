@@ -1,0 +1,64 @@
+
+const getB = document.getElementById("get")
+const setB = document.getElementById("set")
+const demo = document.getElementById("demo")
+
+getB.addEventListener("click", getData)
+setB.addEventListener("click", setData)
+
+
+
+
+function sendReq(method, url, data){
+const promis = new Promise((resolve, reject) => {
+
+const xhr = new XMLHttpRequest();
+
+xhr.open(method, url)
+
+
+    xhr.onload = function(){
+
+        if(this.status >= 400){
+            reject(`there is error ${this.status}`)
+        } else{
+
+            resolve (this.response);
+
+        }
+    }
+
+    xhr.onerror = function () { 
+        reject('network error')
+
+    }
+    
+xhr.responseType = "json"
+
+xhr.send(data)
+});
+return promis;
+ 
+}
+
+
+function getData(){
+
+sendReq('GET', 'https://jsonplaceholder.typicode.com/todos/1').then(response => {console.log(response)}).catch(error => console.log(error))
+
+}
+
+
+function setData(){
+
+sendReq('POST', 'https://jsonplaceholder.typicode.com/posts', JSON.stringify({
+  id: 1,
+  title: '...tannu',
+  body: '...minhaj',
+  userId: 1
+})
+).then(response => {console.log(response)})
+
+
+
+}

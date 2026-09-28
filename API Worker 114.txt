@@ -1,0 +1,87 @@
+
+html..>>>>>>>>>>>>>>
+
+
+
+
+  <button onclick="stW()"> Start Worker </button>
+  <button onclick="stopW()"> stop worker </button>
+  <button onclick="alert('hello Tanzim')"> Click </button>
+
+
+<h1 id="demo"></h1>
+
+
+
+
+main js.....>>>>>>>>>>>>>>>>>>
+
+let w;
+
+
+function stW(){
+
+    if(typeof Worker !== "undefined"){
+
+            if(typeof w == 'undefined'){
+
+                w = new Worker('./js/worker.js') // সঠিক path
+
+            }
+
+            w.onmessage = function (event){
+                const demo = document.getElementById('demo')
+                demo.innerHTML = event.data;
+            }
+
+
+    }else{
+
+    alert('Worker is not support in this browser')
+
+    }
+
+}
+
+
+
+function stopW(){
+    if(typeof w !== 'undefined'){
+        w.terminate();
+        w = undefined;
+    }else{
+        alert('worker naiii bapp')
+
+    }
+}
+
+
+
+
+worker js ......>>>>>>>>>>>>>>>>>>>>>>>
+
+
+
+let i = 0;
+
+
+while(i < 1000000000){
+     i++
+}
+
+// demo.innerHTML = i;
+
+postMessage(i)
+
+বা এইটা দিলে ভালো হয় ...>>>>>>>>>
+
+
+let i = 0 ;
+let x = 0
+while(i < 100000){
+   x = x + i++
+   postMessage(x)
+}
+
+postMessage(x)
+

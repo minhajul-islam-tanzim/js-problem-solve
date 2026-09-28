@@ -1,0 +1,111 @@
+html ...........>>>>>.
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <link rel="stylesheet" href="./css/Style.css">
+</head>
+<body>
+
+<div>
+  <input type="button" value="set name cookie" onclick="setName('name', 'tanzim', 2)">
+</div>
+
+
+<div>
+  <input type="button" value="set username cookie" onclick="setName('username', 'tanzim888', 2)">
+</div>
+
+<div>
+  <input type="button" value="get name cookie" onclick="alert(getCookie2('name'))">
+</div>
+
+<div>
+  <input type="button" value="get username cookie" onclick="alert(getCookie2('username'))">
+</div>
+
+<div>
+  <input type="button" value="check cookie" onclick="checkCookie('username')">
+</div>
+
+  <script src="./js/main.js"></script>
+</body>
+</html>
+
+
+
+
+
+
+
+js............>>>>>>>>>>>>>>>>>>>>>
+
+
+
+
+function setName(cname, cvalue, ex) {
+    let date = new Date();
+    date.setTime(date.getTime() + 24 * 60 * 60 * ex * 1000)
+    let expires = 'expires=' + date.toUTCString();
+
+    document.cookie = cname + '=' + cvalue + ';' + expires + ';path=/';
+
+    console.log(date)
+
+}
+
+
+function getCookie2(cname) {
+
+    let allName = cname + '=';
+    let ca = document.cookie.split(';')
+// ['name=tanzim ', 'username=tanzim888']
+
+
+
+
+    for (let i = 0; i < ca.length; i++) {
+        let res = ca[i]
+
+
+        while (res.charAt(0) === " ") {
+            res = res.substring(1)
+        }
+
+        if (res.indexOf(allName) === 0) {
+            return res.substring(allName.length)
+        }
+
+
+    }
+
+    return '';
+
+
+}
+
+
+
+// cookie check korbe jodi thake tahole welcome ar na thakele new cookie nibe
+
+
+function checkCookie(cname, ex){
+
+    cname =  getCookie2(cname);
+
+    if(cname != ""){
+        alert('welcome' + " " + cname)
+    }else{
+       let name = prompt("please enter your name :");
+        if(name != '' && name != null ){
+
+            setName(cname, name, ex)
+        }
+
+    }
+
+}
+
+
